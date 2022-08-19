@@ -35,11 +35,12 @@ node, edge, start = map(int,input().split())
 graph = {}
 for i in range(edge):
     n1, n2 = map(int,input().split())
+    #n1->n2
     if n1 not in graph:
         graph[n1] = [n2]
     elif n2 not in graph[n1]:
         graph[n1].append(n2)
-
+    #n2->n1
     if n2 not in graph:
         graph[n2] = [n1]
     elif n1 not in graph[n2]:
