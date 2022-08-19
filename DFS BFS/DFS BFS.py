@@ -19,13 +19,13 @@ def BFS(graph, root):
     queue = deque([root])
 
     while queue:
-        n = queue.popleft()
+        n = queue.popleft() #이번에 방문한 노드-> queue에 앞에서 부터 한개씩 꺼냄
         if n not in visited:
             visited.append(n)
             if n in graph:
                 temp = list(set(graph[n]) - set(visited))
-                temp.sort()
-                queue += temp
+                temp.sort() #자식 노드들 정렬
+                queue += temp # 자식노드들을-> 다음 step에 순회 할 노드로 정함
     return " ".join(str(i) for i in visited)
 
 #input---------------------------------
